@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
+import API_BASE_URL from '../apiConfig';
 
 function Dashboard({ token, handleLogout }) {
   const [stats, setStats] = useState({ total: 0, completed: 0, in_progress: 0, todo: 0 });
@@ -8,7 +9,7 @@ function Dashboard({ token, handleLogout }) {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch('http://localhost:5001/tasks/stats', {
+        const response = await fetch(`${API_BASE_URL}/tasks/stats`, {
           headers: {
              'Content-Type': 'application/json',
              Authorization: `Bearer ${token}`
