@@ -1,0 +1,572 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body {
+  background-size: cover;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg);
+  background-color: #f0f0f0; /* Fallback color */
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.App {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.App:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out ;
+}
+
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px ;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #ffffff, #f8f9f1);
+  border-radius: 8px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+.input-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+textarea {
+  flex: 1;
+  height: 60px;
+  resize: none;
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #5cb85c;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+  outline: 2px solid #5cb85c;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.task-box-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.task-box {
+  flex: 1;
+  min-width: 300px;
+  max-width: 30%;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.task-box h2 {
+  text-align: center;
+  font-size: 20px;
+  color: #343a40;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #5cb85c;
+  padding-bottom: 10px;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  transition: box-shadow 0.3s ease, background-color 0.3s;
+  animation: fadeIn 0.3s ease;
+}
+
+.task-list li:hover {
+  background-color: #eef1f7;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.task-list li.completed {
+  background-color: #e0e0e0;
+  opacity: 0.8;
+}
+
+.task-list li.completed span {
+  text-decoration: line-through;
+  color: #6d6d6d;
+}
+
+.task-item p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+.task-list li button {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.task-list li button:hover {
+  background-color: black;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .task-box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .task-box {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  input, textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  .task-list li {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .task-box {
+    padding: 15px;
+  }
+}
+
+/* ── App Navbar ─────────────────────────────────────────────── */
+.app-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #302b63, #0f0c29);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.app-navbar-logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.app-navbar-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-tab {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  box-shadow: none;
+}
+
+.nav-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+.nav-tab.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.admin-tab {
+  color: #f39c12;
+}
+.admin-tab:hover, .admin-tab.active {
+  background: rgba(243, 156, 18, 0.15);
+  color: #f1c40f;
+}
+
+.app-navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-navbar-greeting {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.app-logout-btn {
+  padding: 7px 18px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: none;
+}
+
+.app-logout-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+/* ── Clock Widget ────────────────────────────────────────────── */
+.clock-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #302b63, #24243e);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(48, 43, 99, 0.35);
+  width: fit-content;
+  align-self: center;
+}
+
+.clock-time {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 18px rgba(170, 130, 255, 0.7);
+  line-height: 1;
+}
+
+.clock-date {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* ── Search Bar ──────────────────────────────────────────────── */
+.search-bar-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  align-self: center;
+  background: #fff;
+  border: 1.5px solid #dee2e6;
+  border-radius: 30px;
+  padding: 4px 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 18px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.search-bar-wrapper:focus-within {
+  border-color: #7b2ff7;
+  box-shadow: 0 0 0 3px rgba(123, 47, 247, 0.15);
+}
+
+.search-icon {
+  font-size: 16px;
+  margin-right: 8px;
+  opacity: 0.6;
+}
+
+.search-bar {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: transparent;
+  padding: 8px 0;
+  color: #333;
+  box-shadow: none;
+}
+
+.search-clear-btn {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  transition: color 0.2s, background 0.2s;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.search-clear-btn:hover {
+  color: #555;
+  background: #f0f0f0;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── Task count badge ─────────────────────────────────────────── */
+.task-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #5cb85c;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ── Drag & Drop ─────────────────────────────────────────────── */
+.draggable-task {
+  cursor: grab;
+  transition: opacity 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  animation: fadeIn 0.3s ease;
+}
+
+.draggable-task:active {
+  cursor: grabbing;
+  opacity: 0.55;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.draggable-task:hover {
+  background-color: #eef1f7;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.drag-handle {
+  font-size: 18px;
+  color: #bbb;
+  cursor: grab;
+  margin-bottom: 4px;
+  user-select: none;
+  letter-spacing: 1px;
+}
+
+/* Column highlighted when dragging over */
+.task-box.drop-target {
+  background-color: #eef3ff;
+  border: 2px dashed #7b2ff7;
+  box-shadow: 0 0 0 4px rgba(123, 47, 247, 0.12);
+  transition: background 0.2s, border 0.2s;
+}
+
+/* Empty drop hint */
+.empty-drop-hint {
+  text-align: center;
+  color: #ccc;
+  font-size: 13px;
+  padding: 20px 0;
+  user-select: none;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  list-style: none;
+}
+
+.task-done {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
