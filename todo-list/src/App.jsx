@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AuthForm from './components/AuthForm';
@@ -10,6 +10,7 @@ function App() {
   const [token, setToken] = useState(() => localStorage.getItem('auth_token') || null);
   const [username, setUsername] = useState(() => localStorage.getItem('auth_username') || '');
   const [isAdmin, setIsAdmin] = useState(() => localStorage.getItem('auth_is_admin') === 'true');
+  const [theme, setTheme] = useState(() => localStorage.getItem('app_theme') || 'light');
   
   // 'board', 'dashboard', 'admin'
   const [currentView, setCurrentView] = useState('board');
@@ -31,6 +32,15 @@ function App() {
     setIsAdmin(false);
     setCurrentView('board');
   };
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    localStorage.setItem('app_theme', theme);
+  }, [theme]);
 
   if (!token) {
     return <AuthForm onAuthSuccess={handleAuthSuccess} />;
@@ -73,6 +83,12 @@ function App() {
         </div>
 
         <div className="app-navbar-user">
+          <button
+            className="theme-toggle-btn"
+            onClick={() => setTheme(prev => (prev === 'light' ? 'dark' : 'light'))}
+          >
+            {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+          </button>
           <span className="app-navbar-greeting">👤 {username}</span>
           <button className="app-logout-btn" onClick={handleLogout}>Logout</button>
         </div>

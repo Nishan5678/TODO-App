@@ -48,6 +48,12 @@ body {
   overflow-x: hidden;
 }
 
+body.dark-mode {
+  background-color: #050509;
+  color: #f5f5f5;
+  background-image: none;
+}
+
 .App {
   padding: 20px;
   max-width: 1200px;
@@ -371,6 +377,26 @@ button:disabled {
   gap: 16px;
 }
 
+.theme-toggle-btn {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: none;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+}
+
 .app-navbar-greeting {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
@@ -396,6 +422,66 @@ button:disabled {
   background: rgba(255, 255, 255, 0.22);
   transform: translateY(-1px);
   box-shadow: none;
+}
+
+/* Dark mode overrides */
+body.dark-mode .filter-section,
+body.dark-mode .task-box,
+body.dark-mode .progress-section,
+body.dark-mode .stat-card,
+body.dark-mode .dashboard-container {
+  background: rgba(15, 15, 25, 0.96);
+  color: #f5f5f5;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .task-list li {
+  background-color: #202030;
+}
+
+body.dark-mode .task-list li.completed {
+  background-color: #303045;
+}
+
+body.dark-mode .task-list li.completed span {
+  color: #c0c0d0;
+}
+
+body.dark-mode .app-navbar {
+  background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+body.dark-mode .app-navbar-greeting {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .progress-bar-bg {
+  background-color: #222;
+}
+
+/* Mobile-friendly navbar layout */
+@media (max-width: 768px) {
+  .app-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 16px;
+  }
+
+  .app-navbar-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .app-navbar-user {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .app-navbar-logo {
+    font-size: 16px;
+  }
 }
 
 /* ── Clock Widget ────────────────────────────────────────────── */
